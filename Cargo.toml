@@ -1,0 +1,17 @@
+[package]
+name = "discord-bot"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sled = "0.34"
+rpassword = "5.0"
+# Tokio is used for asynchronous runtime. Enabling "macros" for async/await macros
+# and "rt-multi-thread" for multi-threaded runtime support.
+tokio = { version = "1.21.2", features = ["macros", "rt-multi-thread"] }
+async-trait = "0.1"
+[dependencies.serenity]
+default-features = false
+features = ["client", "gateway", "model", "rustls_backend"]
+version = "0.12"
+
